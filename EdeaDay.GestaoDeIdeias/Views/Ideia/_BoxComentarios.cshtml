@@ -1,0 +1,31 @@
+﻿@model IEnumerable<EdeaDay.GestaoDeIdeias.Model.Comentario>
+<div id="edicaoComentario">
+    <textarea id="comentario" cols="50" draggable="false" placeholder="Digite seu comentário e pressione &quot;enter&quot; para enviar"></textarea>
+    <input type="button" id="btComentar" class="btPadrao btVerde btMenor" value="Enviar" />
+</div>
+<ul id="listaComentarios">
+    <li class="acoes verMais" style="text-align: center;">
+        <a id="btVerMaisComentarios" class="btPadrao btAcao">Ver Mais</a>
+    </li>
+</ul>
+
+<script id="comentario-template" type="text/x-handlebars-template">
+    {{#each Comentarios}}
+    <li data-id="{{Id}}">{{#if ComentarioDoUsuarioAtual}}
+            <a class="removerComentario" href="#">x</a>
+        {{/if}}
+        <div class="fotoUsuario">
+            <a href="@Url.Action("Perfil", "Usuario")/{{Usuario.Id}}">{{#if Usuario.Foto }}
+                <img src="{{Usuario.Foto}}" alt="{{Usuario.Nome}}" title="{{Usuario.Nome}}" />
+                {{else}}
+                <img src="@Url.Content("~/Content/images/figuras/avatarPadrao.jpg")" alt="{{Usuario.Nome}}" title="{{Usuario.Nome}}" />
+                {{/if}}
+            </a>
+        </div>
+        <a class="usuario" href="@Url.Action("Perfil", "Usuario")/{{Usuario.Id}}">{{Usuario.Nome}}
+        </a>
+        <p>{{Texto}}</p>
+        <div class="data"><span>{{Data}}</span></div>
+    </li>
+    {{/each}}
+</script>

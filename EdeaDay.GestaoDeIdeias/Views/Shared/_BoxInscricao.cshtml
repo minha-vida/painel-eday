@@ -1,0 +1,48 @@
+﻿@using EdeaDay.GestaoDeIdeias.Model.Utils;
+@model EdeaDay.GestaoDeIdeias.Model.Ideia
+<div id="vagas">
+    @if (Model.Vagas != null && Model.Vagas.Count > 0)
+    {
+        <ul>
+            @foreach (var vaga in Model.Vagas)
+            {
+                <li>
+                    <div class="quadroVagaAberta">
+                        <h3>@vaga.Cargo.GetDescription()</h3>
+                        <span class="acoes">
+                            @Ajax.ActionLink("Participar", "Subscribe", "Vaga",
+                                         new { id = vaga.VagaID },
+                                         new AjaxOptions
+                                             {
+                                                 Confirm = "Você tem certeza que deseja se inscrever para esta vaga?",
+                                                 UpdateTargetId = "vagas",
+                                                 OnBegin = "LockScreen",
+                                                 OnComplete = "UnlockScreen",
+                                                 OnSuccess = "InscricaoSucesso",
+                                                 OnFailure = "InscricaoFalha"
+                                             }, new { @class = "btPadrao btAcao" })
+                        </span>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p class="msg">
+            <span>Não há vagas disponíveis para esta idéia.</span>
+        </p>
+    }
+</div>
+<script type="text/javascript">
+
+    function InscricaoSucesso() {
+        alert('Sua inscrição foi registrada com sucesso. Em breve você receberá um e-mail confirmando sua inscrição.');
+    }
+
+    function InscricaoFalha() {
+        alert('Ocorreu um erro na sua inscrição. Por favor, entre em contato com o time do Painel eDay.');
+    }
+
+</script>
+

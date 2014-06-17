@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{201DF0C2-D4E4-48C4-953A-D960EA8374E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EdeaDay.GestaoDeIdeias.Repository</RootNamespace>
+    <AssemblyName>EdeaDay.GestaoDeIdeias.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comentario\ComentarioRepository.cs" />
+    <Compile Include="Comentario\IComentarioRepository.cs" />
+    <Compile Include="Eday.cs" />
+    <Compile Include="Ideia\IdeiaRepository.cs" />
+    <Compile Include="Ideia\IIdeiaRepository.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="Migrations\201305101713094_RemoverAprovacao.cs" />
+    <Compile Include="Migrations\201305101713094_RemoverAprovacao.Designer.cs">
+      <DependentUpon>201305101713094_RemoverAprovacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305101933433_Comentarios.cs" />
+    <Compile Include="Migrations\201305101933433_Comentarios.Designer.cs">
+      <DependentUpon>201305101933433_Comentarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305131134594_IdeiaComentarios.cs" />
+    <Compile Include="Migrations\201305131134594_IdeiaComentarios.Designer.cs">
+      <DependentUpon>201305131134594_IdeiaComentarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305210355198_ComentarioValidation.cs" />
+    <Compile Include="Migrations\201305210355198_ComentarioValidation.Designer.cs">
+      <DependentUpon>201305210355198_ComentarioValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="Usuario\IUsuarioRepository.cs" />
+    <Compile Include="Usuario\UsuarioRepository.cs" />
+    <Compile Include="Vaga\IVagaRepository.cs" />
+    <Compile Include="Vaga\VagaRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EdeaDay.GestaoDeIdeias.Model\EdeaDay.GestaoDeIdeias.Model.csproj">
+      <Project>{ba92c45b-f8a6-46da-a2e1-159198f0f0fa}</Project>
+      <Name>EdeaDay.GestaoDeIdeias.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201305101713094_RemoverAprovacao.resx">
+      <DependentUpon>201305101713094_RemoverAprovacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305101933433_Comentarios.resx">
+      <DependentUpon>201305101933433_Comentarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305131134594_IdeiaComentarios.resx">
+      <DependentUpon>201305131134594_IdeiaComentarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305210355198_ComentarioValidation.resx">
+      <DependentUpon>201305210355198_ComentarioValidation.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

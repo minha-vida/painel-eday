@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Ideias";
+}
+<div class="conteudoPrincipal">
+    <div class="secaoTitulo">
+        <h1 class="titulo">@ViewBag.Title</h1>
+        <div class="opcoes">
+            <b>Filtrar por:</b>
+            <select id="filtrarPor" name="filtrarPor">
+                <option value="1">Minhas ideias</option>
+                <option value="2">Ideias com vagas</option>
+                <option value="3">Todas as ideias</option>
+            </select>
+        </div>
+    </div>
+    <section id="secaoListaIdeias">
+    </section>
+</div>
+@section javascript{
+    <script>
+        InicializarFiltrarPor();
+    </script>
+}

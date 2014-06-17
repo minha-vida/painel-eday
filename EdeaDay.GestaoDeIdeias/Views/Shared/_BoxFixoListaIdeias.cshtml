@@ -1,0 +1,23 @@
+﻿@using EdeaDay.GestaoDeIdeias.Model.Utils
+@model EdeaDay.GestaoDeIdeias.Site.ViewModel.IdeiaViewModel
+<div class="conteudo">
+    <ul>
+        @foreach (var ideia in Model.Ideias)
+        {
+            <li>
+                <p class="titulo">@ideia.Titulo</p>
+                <p><strong>Status:</strong> <span>@ideia.Status.GetDescription()</span></p>
+                <div class="acoes">
+                @if (ideia.UserIsIdealizador(Model.UsuarioAtual))    
+                {
+                        <a href="@Url.Action("Manager", "Ideia", new { id = ideia.IdeiaID })" title="manager" class="btPadrao btAcao">manager</a>
+                }
+                else
+                {
+                        <a href="@Url.Action("Details", "Ideia", new { id = ideia.IdeiaID })" title="informações" class="btPadrao btAcao">informações</a>
+                }
+                </div>
+            </li>
+        }
+    </ul>
+</div>

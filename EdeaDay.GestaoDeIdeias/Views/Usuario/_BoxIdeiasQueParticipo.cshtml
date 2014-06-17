@@ -1,0 +1,23 @@
+﻿@using EdeaDay.GestaoDeIdeias.Model
+@using EdeaDay.GestaoDeIdeias.Site.Helpers
+@using EdeaDay.GestaoDeIdeias.Model.Utils;
+@model Usuario
+<ul>
+    @foreach (var item in Model.Ideias)
+    {
+        <li>
+            <a href="@Url.Action("Details", "Ideia", new { id = item.IdeiaID })" title="Ver ideia">
+                <img src="@Url.ObterUrlLogoIdeia(item.Ideia)" alt="@item.Ideia.Titulo" title="@item.Ideia.Titulo"/></a>
+            <div>
+                <h3><a href="@Url.Action("Details", "Ideia", new { id = item.IdeiaID })">@item.Ideia.Titulo</a></h3>
+                <p>Funções</p>
+                @foreach (var cargo in item.Ideia.FindCargosForUser(Model))
+                {
+                    <span>+ @cargo.Cargo.GetDescription()</span>    
+                }
+
+            </div>
+        </li>
+    }
+
+</ul>

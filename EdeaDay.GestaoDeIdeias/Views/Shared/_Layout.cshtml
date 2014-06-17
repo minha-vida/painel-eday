@@ -1,0 +1,90 @@
+﻿@using EdeaDay.GestaoDeIdeias.Site.Helpers
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="EXPIRES" content="-1" />
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+    <title>@ViewBag.Title - Painel eDay</title>
+    <meta name="description" content="O Painel eDay tem o objetivo de centralizar nossas ideias, melhorar a integração entre as áreas e, é claro, divertir e ensinar cada vez mais colaboradores!" />
+    <meta name="author" content="Minha Vida - Gestão de Ideias" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="@Url.Content("~/Content/images/favicon.ico")" />
+    @Html.InserirCssSemCache("~/Content/Site.css")
+    <link href="@Url.Content("~/Content/colorbox.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/themes/flick/jquery-ui-1.8.22.custom.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/libs/modernizr-2.5.3.js")" type="text/javascript"></script>
+</head>
+<body>
+    <section class="barra">
+        <div>
+            <div class="usuario">
+                @Html.Action("Login", "Usuario")
+            </div>
+            <img src="@Url.Content("~/Content/images/logos/logoMv.png")" alt="Minha Vida" />
+            <nav>
+                <ul>
+                    @*<li class="busca">
+                        <input type="text" />
+                        <input type="image" src="@Url.Content("~/Content/images/botoes/btBusca.png")" />
+                    </li>*@
+                    <li>
+                        <a href="@Url.Action("Perfil", "Usuario", new { id = string.Empty })">perfil</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "Ideia")">ideias</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <div class="page">
+        <div class="main">
+            <aside class="colunaLateral">
+                <a href="@Url.Action("Index", "Ideia")">
+                    <img src="@Url.Content("~/Content/images/logos/logoEday.png")" alt="Painel eDay" class="logo" /></a>
+                <a id="idealizarButton" href="#idealizarModal" title="Idealizar" class="btPadrao">idealizar</a>
+                <div class="boxLateral">
+                    <ul>
+                        <li>
+                            <div class="legenda">
+                                <a href="#" title="ideias" class="legenda ativo">ideias</a>
+                            </div>
+                            @Html.Action("BoxFixoListaIdeias", "Ideia")
+                        </li>
+                        <li>
+                            <div class="legenda">
+                                <a href="#" title="brainstorm" class="legenda">brainstorm</a>
+                            </div>
+                            @Html.Action("BoxBrainstorm", "Usuario")
+                        </li>
+                    </ul>
+
+                </div>
+            </aside>
+            @RenderBody()
+        </div>
+        <footer>
+            <p>Painel eDay - Minha Vida - Todos os direitos reservados</p>
+        </footer>
+    </div>
+    <script src="@Url.Content("~/Scripts/libs/jquery-1.8.2.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/libs/jquery.unobtrusive-ajax.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/libs/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/libs/jquery.validate.unobtrusive.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/libs/jquery-ui-1.8.22.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/libs/jquery.colorbox.js")"></script>
+    <script src="@Url.Content("~/Scripts/libs/jquery.blockUI.js")"></script>
+    <script src="@Url.Content("~/Scripts/libs/handlebars-min.js")"></script>
+    <script src="@Url.Content("~/Scripts/utils.characterCount.js")"></script>
+    @Html.InserirScriptSemCache("~/Scripts/script.js")
+    @RenderSection("javascript", false)
+    <div style="display: none;">
+        <section id="idealizarModal" class="modal">
+            @Html.Partial("_BoxIdealizar", new EdeaDay.GestaoDeIdeias.Model.Ideia())
+        </section>
+    </div>
+    @Html.Partial("_GoogleAnalytics")
+</body>
+</html>

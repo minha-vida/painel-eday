@@ -1,0 +1,45 @@
+﻿@using EdeaDay.GestaoDeIdeias.Site.Helpers
+@{
+    Layout = null;
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Painel eDay - Bem-vindo!</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="@Url.Content("~/Content/images/favicon.ico")" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="login">
+        <div class="page">
+            <img src="@Url.Content("~/Content/images/logos/logoEday.png")" alt="Logo Painel eDay" class="logo" />
+            <section class="boxLogin">
+                <h1>Bem-vindo ao <strong>Painel eDay</strong></h1>
+                <h2>Comece a participar de ideias inovadoras em seu eDay.</h2>
+                <div>
+                    <a id="loginWithGoogle" class="btPadrao btVerde" title="Faça seu login" href="@Url.ObterUrlParaGoogleAuthentication()">Faça seu login</a>
+                </div>
+                <p class="dica">Faça o seu login pelo próprio
+                    <br />
+                    e-mail do Minha Vida ; )</p>
+            </section>
+        </div>
+        <div class="ilustracao">
+            <img src="@Url.Content("~/Content/images/figuras/imgLogin.png")" 
+            alt="Teve uma ideia? Então junte uma galera, planeje e desenvolva com seu time e ajude o Minha Vida a dominar o mundo!" />
+        </div>
+        <footer>
+            <p>
+                <span>powered by</span>
+                <img src="@Url.Content("~/Content/images/logos/logoMinhaVida.png")"  alt="Logo Minha Vida" />
+            </p>
+        </footer>
+    </div>
+    @Html.Partial("_GoogleAnalytics")
+</body>
+</html>

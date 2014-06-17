@@ -1,0 +1,35 @@
+﻿@using EdeaDay.GestaoDeIdeias.Model.Utils
+@model EdeaDay.GestaoDeIdeias.Model.Ideia
+<div id="vagas">
+    @if (Model.Vagas != null && Model.Vagas.Count > 0)
+    {
+        <ul>
+            @foreach (var vaga in Model.Vagas)
+            {
+                <li>
+                    <div class="quadroVagaAberta">
+                        <h3>@vaga.Cargo.GetDescription()</h3>
+                        <span class="acoes">
+                            @Ajax.ActionLink("Excluir", "Delete", "Vaga",
+                                         new { id = vaga.VagaID },
+                                         new AjaxOptions
+                                             {
+                                                 Confirm = "Você tem certeza que deseja excluir esta vaga?",
+                                                 UpdateTargetId = "controlarVagas",
+                                                 OnComplete = "InicializarModalDeInscricoes"
+                                             },
+                                         new { @class = "descricao btAuxiliar", title = "Excluir" })
+                            <a class="btPadrao btAcao verInscricoes" data-id="@vaga.VagaID" title="Inscrições de @vaga.Cargo.GetDescription()" href="#modalInscricoes">Inscrições</a>
+                        </span>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p class="msg">
+            <span>Não há vagas disponíveis para esta ideia.</span>
+        </p>
+    }
+</div>

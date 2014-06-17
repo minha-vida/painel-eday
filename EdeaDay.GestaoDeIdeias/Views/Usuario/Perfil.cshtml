@@ -1,0 +1,35 @@
+﻿@using EdeaDay.GestaoDeIdeias.Site.Helpers
+@model EdeaDay.GestaoDeIdeias.Model.Usuario
+@{
+    ViewBag.Title = Model.Nome;
+}
+
+
+<div class="conteudoPrincipal">
+        <div class="secaoTitulo">
+        <h1 class="titulo">Perfil</h1>
+    </div>
+    <section class="detalhesPerfil">
+        <p class="espacoFoto">
+            <img src="@Url.ObterUrlImagemPerfil(Model)" alt="@Model.Nome" title="@Model.Nome" class="userProfilePhoto" />
+        </p>
+        <div>
+            <h2>@Model.Nome</h2>
+            <p>@Html.ObterListaDeCargosDoUsuarioSeparadoPorVirgula(Model)</p>
+
+            <p>
+                <strong>Email:</strong>
+                @Html.DisplayFor(model => model.Email)
+            </p>
+            <div class="acoes">
+                <a href="" title="Ideias que Participei" class="btPadrao btAcao desabilitado">Ideias que Participei</a>
+            </div>
+        </div>
+    </section>
+    <section id="boxIdeias" class="boxUsuarios">
+        <div class="display-field">
+            @Html.Partial("_BoxIdeiasQueParticipo", Model)
+        </div>
+    </section>
+
+</div>

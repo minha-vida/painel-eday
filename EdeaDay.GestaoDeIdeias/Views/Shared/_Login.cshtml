@@ -1,0 +1,14 @@
+﻿@using EdeaDay.GestaoDeIdeias.Site.Helpers;
+@model EdeaDay.GestaoDeIdeias.Model.Usuario
+@if (Model != null)
+{
+    <a href="@Url.Action("Perfil", "Usuario")" title="Ver meu perfil">
+        <img src="@Url.ObterUrlImagemPerfil(Model)" alt="@Model.Nome" title="@Model.Nome" />
+    </a>
+    <div class="nome">
+        <a href="@Url.Action("Perfil", "Usuario")">@Model.Nome</a>
+        -
+        @Html.ActionLink("Logout", "Logout", "Usuario")@* <span>&#9660;</span>*@
+    </div>
+    
+}

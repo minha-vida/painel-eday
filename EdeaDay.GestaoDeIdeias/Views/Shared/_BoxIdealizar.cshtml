@@ -1,0 +1,52 @@
+﻿@using EdeaDay.GestaoDeIdeias.Site.Helpers
+@model EdeaDay.GestaoDeIdeias.Model.Ideia
+@using (Html.BeginForm("Add", "Ideia", FormMethod.Post, new { enctype = "multipart/form-data", id = "formIdealizar" }))
+{
+    @Html.ValidationSummary(true)
+    <div class="logo">
+        <p class="editor-label">Logo:</p>
+        <a href="#" title="">
+            <label for="flFotoBoxIdealizar">
+                <img id="imagemIdeiaBoxIdealizar" src="@Url.ObterUrlLogoIdeia(Model)" alt="@Model.Titulo" title="@Model.Titulo" />
+                <span>trocar imagem</span>
+            </label>
+        </a>
+        <input type="file" id="flFotoBoxIdealizar" name="flFotoBoxIdealizar" value="" />
+        <span class="info">(apenas imagens no formato jpg com no máx. 1mb)</span>
+        <input type="submit" value="Registrar!" class="btPadrao btVerde" />
+    </div>
+    <div class="ctnIdealizar">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Titulo)
+            @Html.ValidationMessageFor(model => model.Titulo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Titulo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descricao)
+            @Html.ValidationMessageFor(model => model.Descricao)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Descricao, new { id = "idealizarDescricao" })
+            <span class="info">(<span id="counterIdealizarDescricao">190</span> caracteres restantes)</span>
+        </div>
+        <p class="info">Você poderá editar estas informações quando quiser.</p>
+    </div>
+    @Html.HiddenFor(model => model.IdeiaID)
+}
+<script>
+
+    ConfigurarContagemDeCaracteres($('#idealizarDescricao'), $("#counterIdealizarDescricao"));
+
+    $('#formIdealizar').submit(function () {
+        if (!$(this).valid()) {
+            UnlockScreen();
+            return false;
+        }
+
+        LockScreen();
+        return true;
+    });
+</script>

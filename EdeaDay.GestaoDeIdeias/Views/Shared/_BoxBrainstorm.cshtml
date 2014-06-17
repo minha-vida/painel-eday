@@ -1,0 +1,15 @@
+﻿@model IEnumerable<EdeaDay.GestaoDeIdeias.Model.Brainstorm>
+<div class="conteudo inativo">
+    <ul>
+        @if(Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <li data-id="@item.BrainstormID">@item.Texto</li>
+            }
+        }
+        <li>
+            <input type="text" name="txtBrainstorm" value="" />
+        </li>
+    </ul>
+</div>

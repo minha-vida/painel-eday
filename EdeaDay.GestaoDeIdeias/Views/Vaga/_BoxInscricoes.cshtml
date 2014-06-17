@@ -1,0 +1,40 @@
+﻿@using EdeaDay.GestaoDeIdeias.Site.Helpers
+@model EdeaDay.GestaoDeIdeias.Model.Vaga
+<div class="boxUsuarios listaInscricoes">
+    @if (Model.Candidatos.Any())
+    {
+        <ul>
+            @foreach (var candidato in Model.Candidatos)
+            {
+                <li>
+                    <a href="@Url.Action("Perfil", "Usuario", new { id = candidato.UsuarioID })" title="Ver perfil">
+                        <img src="@Url.ObterUrlImagemPerfil(candidato)" alt="@candidato.Nome" title="@candidato.Nome" /></a>
+                    <div>
+                        <h3><a href="@Url.Action("Perfil", "Usuario", new { id = candidato.UsuarioID })" title="Ver perfil">@candidato.Nome</a></h3>
+                    </div>
+                    <div>
+                        <span class="acoes">
+                            @Ajax.ActionLink("Aprovar", "AcceptSubscription", "Vaga",
+                                                 new { id = Model.VagaID, usuarioId = candidato.UsuarioID },
+                                                 new AjaxOptions
+                                                     {
+                                                         Confirm = "Você tem certeza que deseja aprovar esta vaga?",
+                                                         UpdateTargetId = "vagas",
+                                                         OnBegin = "LockScreen",
+                                                         OnComplete = "UnlockScreen",
+                                                         OnSuccess = "AprovacaoSucesso",
+                                                         OnFailure = "AprovacaoFalha"
+                                                     }, new { @class = "btPadrao btVerde" })
+                        </span>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p class="msg">
+            <span>Não foram encontradas inscrições para esta vaga.</span>
+        </p>
+    }
+</div>

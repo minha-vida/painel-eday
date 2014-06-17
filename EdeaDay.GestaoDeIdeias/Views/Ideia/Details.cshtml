@@ -1,0 +1,46 @@
+﻿@using EdeaDay.GestaoDeIdeias.Model.Utils
+@using EdeaDay.GestaoDeIdeias.Site.Helpers
+@model EdeaDay.GestaoDeIdeias.Model.Ideia
+@{
+    ViewBag.Title = Model.Titulo;
+}
+<div class="conteudoPrincipal">
+    <div class="secaoTitulo">
+        <h1 class="titulo">Informações</h1>
+    </div>
+
+    <section class="detalheIdeia">
+        <div class="espacoFoto">
+            <img src="@Url.ObterUrlLogoIdeia(Model)" alt="@Model.Titulo" title="@Model.Titulo" class="imgIdeia"/>
+            <img src="@Url.ObterUrlMedalhaIdeia(Model)" alt="@Model.Status.GetDescription()" title="@Model.Status.GetDescription()" class="andamento" />
+        </div>
+        <div class="ctnIdeia">
+            <h2 class="titulo">@Model.Titulo</h2>
+            <div class="info">@Model.DataInicial.ToTimeElapsedNotation()</div>
+            <p class="descricao">
+                @Html.DisplayFor(model => model.Descricao)
+            </p>
+            <div class="acoes">
+                <a id="abaComentarios" data-conteudo-aba="boxComentarios" href="#" title="Comentários (@Model.Comentarios.Count)" class="btPadrao btAcao desabilitado aba">Comentários (@Model.Comentarios.Count)</a>
+                <a id="abaVagas" data-conteudo-aba="boxVagas" href="#" title="Vagas (@Model.Vagas.Count)" class="btPadrao btAcao aba">Vagas (@Model.Vagas.Count)</a>
+                <a id="abaEnvolvidos" data-conteudo-aba="boxEnvolvidos" href="#" title="Envolvidos (@Model.Envolvidos.Count)" class="btPadrao btAcao aba">Envolvidos (@Model.Envolvidos.Count)</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="boxComentarios" class="conteudoAba">
+        <input type="hidden" id="IdeiaID" value="@Model.IdeiaID" />
+        @Html.Partial("_BoxComentarios", Model.Comentarios)
+    </section>
+    <section id="boxVagas" class="conteudoAba" style="display: none;">
+        @Html.Partial("_BoxInscricao", Model)
+    </section>
+    <section id="boxEnvolvidos" class="conteudoAba" style="display: none;">
+        @Html.Partial("_BoxEnvolvidos", Model.Envolvidos)
+    </section>
+</div>
+@section javascript
+{
+    @Html.InserirScriptSemCache("~/Scripts/details.js")
+    @Html.InserirScriptSemCache("~/Scripts/comentario.js")
+}

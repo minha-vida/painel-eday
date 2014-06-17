@@ -1,0 +1,16 @@
+﻿@using EdeaDay.GestaoDeIdeias.Site.Helpers;
+@using EdeaDay.GestaoDeIdeias.Model.Utils;
+@model IEnumerable<EdeaDay.GestaoDeIdeias.Model.Colaborador>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="@Url.Action("Perfil", "Usuario", new { id = item.UsuarioID })" title="Ver perfil">
+                <img src="@Url.ObterUrlImagemPerfil(item.Usuario)" alt="@item.Usuario.Nome" title="@item.Usuario.Nome" /></a>
+            <div>
+                <h3><a href="@Url.Action("Perfil", "Usuario", new { id = item.UsuarioID })" title="Ver perfil">@item.Usuario.Nome</a></h3>
+                <span>como @item.Cargo.GetDescription()</span>
+            </div>
+        </li>
+    }
+</ul>

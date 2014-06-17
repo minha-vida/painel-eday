@@ -1,0 +1,1153 @@
+﻿body, a, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, textarea, p, blockquote, th, td {
+    color: #707070;
+    padding: 0;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* Estrutura */
+body {
+    background: url('../Content/images/backgrounds/pattern.gif');
+    font: normal 12px/17px Arial;
+    overflow: hidden;
+}
+
+.barra {
+    background: url('../Content/images/backgrounds/bgBarra.png') repeat-x;
+    height: 43px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+    .barra, .barra a {
+        color: #999;
+    }
+
+        .barra > div {
+            font-size: 14px;
+            margin: 0 auto;
+            padding-top: 6px;
+            text-shadow: 1px 1px 1px #d9d7d7;
+            width: 960px;
+        }
+
+            .barra > div > img {
+                float: left;
+                margin: -3px 0 0 30px;
+            }
+
+        .barra ul {
+            margin-left: 85px;
+        }
+
+        .barra li {
+            float: left;
+            height: 30px;
+            margin-top: -6px;
+            padding-top: 9px;
+            text-align: center;
+        }
+
+            .barra li:hover, .barra li.ativo {
+                background-color: rgba(255,255,255,0.5);
+            }
+
+            .barra li a {
+                border-left: 1px solid #cecece;
+                display: inline-block;
+                padding: 2px 0 4px;
+                text-decoration: none;
+                width: 130px;
+            }
+
+            .barra li.ativo a {
+                color: #c6c5c5;
+            }
+
+            .barra li.busca input {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .barra li.busca {
+                display: none;
+                padding: 0 20px;
+                width: auto;
+            }
+
+                .barra li.busca input[type="text"] {
+                    border: 1px solid #cecece;
+                    font: 10px/12px Arial;
+                    padding: 6px 10px;
+                    width: 180px;
+                }
+
+        .barra .usuario {
+            float: right;
+            margin-right: 10px;
+        }
+
+            .barra .usuario span {
+                margin-left: 5px;
+            }
+
+            .barra .usuario a:hover {
+                text-decoration: underline;
+            }
+
+            .barra .usuario img {
+                background-color: #fff;
+                border: 1px solid #cecece;
+                display: block;
+                float: right;
+                height: 28px;
+                text-indent: -200px;
+                overflow: hidden;
+                width: 28px;
+            }
+
+            .barra .usuario .nome {
+                border-right: 1px solid #cecece;
+                margin: 5px 41px 0 0;
+                padding-right: 14px;
+            }
+
+.page {
+    margin: 0 auto;
+    padding-top: 39px;
+    width: 960px;
+    position: absolute;
+    left: 50%;
+    margin-left: -480px;
+    top: 0;
+    bottom: 0px;
+}
+
+.colunaLateral {
+    float: left;
+    padding: 20px 25px 0 20px;
+    text-align: center;
+    width: 230px;
+}
+
+    .colunaLateral .logo {
+        margin-bottom: 15px;
+        width: 190px;
+    }
+
+.conteudoPrincipal {
+    background-color: #fff;
+    border: 2px solid #e6e6e6;
+    margin-left: 275px;
+    padding: 20px 0 0 0;
+    position: absolute;
+    top: 38px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+    .conteudoPrincipal .secaoTitulo {
+        position: relative;
+        border-bottom: 2px solid #e6e6e6;
+        height: 35px;
+        margin-bottom: 12px;
+        z-index: 10;
+    }
+
+        .conteudoPrincipal .secaoTitulo .opcoes {
+            position: absolute;
+            right: 10px;
+            top: -10px;
+        }
+
+    .conteudoPrincipal #secaoListaIdeias {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-right: 10px;
+    }
+
+.page > footer {
+    background-color: #fff;
+    border-top: 2px solid #e6e6e6;
+    border-left: 2px solid #e6e6e6;
+    border-right: 2px solid #e6e6e6;
+    bottom: 0;
+    font: 10px arial;
+    margin: 0 auto;
+    padding: 5px 10px;
+    position: fixed;
+    width: 940px;
+}
+/* Fim estrutura */
+/* Padrões */
+.titulo {
+    font: bold 18px/20px Arial;
+    margin-bottom: 15px;
+}
+
+h1.titulo {
+    margin-left: 20px;
+}
+
+.btPadrao {
+    background-color: #35adff;
+    border: 1px solid #006cae;
+    border-radius: 2px;
+    box-shadow: 0 8px 0 -5px #72c6ff inset;
+    color: #fff;
+    cursor: pointer;
+    font: bold 22px/16px Trebuchet MS;
+    display: inline-block;
+    height: 30px;
+    letter-spacing: -0.5px;
+    padding: 14px 20px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+    .btPadrao:hover {
+        opacity: 0.9;
+        text-decoration: none;
+    }
+
+input.btVerde, a.btVerde {
+    background-color: #6bc43e;
+    border-color: #299301;
+    box-shadow: 0 8px 0 -5px #98d678 inset;
+    font-size: 19px;
+    height: 26px;
+    padding-top: 12px;
+}
+
+input.btVerde {
+    padding-top: 0;
+    height: 38px;
+}
+
+input.btMenor, a.btMenor {
+    font-size: 14px;
+    height: 28px;
+    letter-spacing: 0;
+    padding: 0 12px;
+    vertical-align: middle;
+}
+
+.editor-label {
+    font: bold 18px/22px Arial;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.field-validation-error {
+    color: #D00;
+    font-size: 12px;
+}
+
+input[type="text"], textarea, select {
+    border: 1px solid #cecece;
+    display: inline-block;
+    font: normal 12px/14px Arial;
+    margin-bottom: 20px;
+    padding: 7px 10px;
+    resize: none;
+}
+
+select {
+    padding: 6px 10px;
+}
+/* Fim padrões */
+/* Login */
+.login {
+    color: #666;
+    padding-top: 50px;
+    text-align: center;
+}
+
+    .login .page {
+        padding-bottom: 100px;
+        position: static;
+        left: auto;
+        margin: auto;
+    }
+
+    .login .logo {
+        float: left;
+        padding: 60px 0 0 70px;
+    }
+
+    .login .boxLogin {
+        background: url('../Content/images/backgrounds/patternLista.gif');
+        border: 3px solid #e6e6e6;
+        font: 12px/15px Arial;
+        letter-spacing: -1px;
+        margin: 0 85px 0 565px;
+        padding: 35px 25px 40px;
+    }
+
+    .login h1 {
+        font-size: 26px;
+        margin-bottom: 22px;
+    }
+
+        .login h1 strong {
+            font: bold 41px/37px Arial;
+        }
+
+    .login h2 {
+        border-top: 2px solid #d6d3cb;
+        font: 18px/20px Arial;
+        margin: 0 35px;
+        padding: 14px 10px;
+    }
+
+    .login p.dica {
+        letter-spacing: -0.5px;
+        margin-top: 20px;
+    }
+
+    .login input {
+        background-color: #5bbe29;
+        border: 1px solid #299301;
+        box-shadow: 0 8px 0 -5px #8dd26a inset;
+        border-radius: 2px;
+        color: #fff;
+        cursor: pointer;
+        font: bold 22px/16px Trebuchet MS;
+        height: 44px;
+        padding-bottom: 2px;
+        text-transform: uppercase;
+        width: 225px;
+    }
+
+    .login .ilustracao {
+        background: #ffffff;
+        background: -moz-linear-gradient(top, #ffffff 0%, #f5f5f5 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f5f5f5));
+        background: -webkit-linear-gradient(top, #ffffff 0%,#f5f5f5 100%);
+        background: -o-linear-gradient(top, #ffffff 0%,#f5f5f5 100%);
+        background: -ms-linear-gradient(top, #ffffff 0%,#f5f5f5 100%);
+        background: linear-gradient(to bottom, #ffffff 0%,#f5f5f5 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5',GradientType=0 );
+        border-top: 3px solid #e6e6e6;
+        border-bottom: 3px solid #e6e6e6;
+        padding: 15px 0;
+    }
+
+    .login footer {
+        font: italic 14px/20px Arial;
+        margin: 0 auto;
+        padding: 20px 0 50px;
+        text-align: right;
+        width: 775px;
+    }
+
+        .login footer span, .login footer img {
+            color: #aeaca0;
+            display: inline-block;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+@media (max-width:1380px) {
+    .login {
+        padding: 0;
+    }
+
+        .login .page {
+            padding: 15px 0;
+        }
+
+        .login .boxLogin {
+            padding: 25px;
+        }
+
+        .login .logo {
+            padding-top: 30px;
+        }
+}
+/* Fim login */
+/* Box lateral */
+.boxLateral {
+    background-color: #fff;
+    border: 2px solid #e6e6e6;
+    height: 315px;
+    margin-top: 25px;
+    position: relative;
+    text-align: left;
+}
+
+    .boxLateral > ul > li {
+        float: left;
+        width: 111px;
+    }
+
+    .boxLateral .legenda {
+        background: url('../Content/images/backgrounds/bgBoxLateral.png') repeat-x;
+        height: 37px;
+    }
+
+    .boxLateral li:first-child .legenda a {
+        border: 0 none;
+    }
+
+    .boxLateral .legenda a {
+        border-left: 2px solid #e6e6e6;
+        color: #707070;
+        display: block;
+        float: left;
+        font: bold 14px/17px Arial;
+        height: 29px;
+        padding-top: 10px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        width: 113px;
+        z-index: 1;
+    }
+
+        .boxLateral .legenda a.ativo {
+            background: #fff;
+            height: 29px;
+        }
+
+    .boxLateral .conteudo {
+        border-top: 2px solid #e6e6e6;
+        height: 240px;
+        position: absolute;
+        left: 0;
+        padding: 25px 8px 15px 20px;
+        top: 37px;
+        width: 198px;
+        z-index: 0;
+    }
+
+        .boxLateral .conteudo ul li {
+            word-wrap: break-word;
+        }
+
+        .boxLateral .conteudo .acoes {
+            margin-top: 8px;
+        }
+
+    .boxLateral p.titulo {
+        font: normal bold 14px Arial;
+        margin-bottom: 5px;
+    }
+
+    .boxLateral p {
+        font: italic 12px/14px Arial;
+    }
+
+    .boxLateral div ul {
+        height: 240px;
+        overflow-y: auto;
+    }
+
+        .boxLateral div ul li {
+            border-bottom: 1px solid #f0f0f0;
+            margin: 0 5px 15px 0;
+            padding-bottom: 15px;
+        }
+
+    .boxLateral .conteudo.inativo {
+        display: none;
+    }
+/* Lista de ideias */
+.listaIdeias {
+    padding-top: 28px;
+    overflow-y: auto;
+    right: 0;
+    left: 0;
+    position: absolute;
+    bottom: 34px;
+    top: 69px;
+}
+
+    .listaIdeias li {
+        background: url('../Content/images/backgrounds/patternLista.gif');
+        border: 3px solid #e6e6e6;
+        margin: 0 0 50px 20px;
+        padding: 0 20px 0 20px;
+        width: 585px;
+    }
+
+    .listaIdeias .verMaisInfos {
+        float: right;
+        position: relative;
+        text-align: center;
+        top: -28px;
+        width: 200px;
+    }
+
+.verMaisInfos .espacoFoto {
+    border: 3px solid #e6e6e6;
+    margin-bottom: 17px;
+}
+
+    .verMaisInfos .espacoFoto img {
+        display: block;
+    }
+
+.listaIdeias .infosIniciais {
+    margin-right: 225px;
+    padding-top: 20px;
+}
+
+.listaIdeias a.btVerde {
+    float: right;
+    margin-top: 6px;
+}
+
+.listaIdeias .infosIniciais h3 {
+    font: italic bold 14px/20px Arial;
+}
+
+.listaIdeias .andamento {
+    background-color: #fff;
+    border: 3px solid #e6e6e6;
+    margin: 0 0 -10px -30px;
+    width: 200px;
+}
+
+    .listaIdeias .andamento > div {
+        overflow: hidden;
+        line-height: 14px;
+        padding: 5px 10px;
+    }
+
+    .listaIdeias .andamento h3 {
+        line-height: 16px;
+        padding-top: 5px;
+    }
+
+    .listaIdeias .andamento img {
+        float: left;
+        margin-right: 10px;
+    }
+
+    .listaIdeias .andamento span {
+        display: block;
+        font: italic 10px Arial;
+    }
+
+.listaIdeias p.descricao {
+    margin-bottom: 15px;
+    min-height: 25px;
+    overflow: hidden;
+}
+
+.listaIdeias .itemEspaco {
+    background-color: #fdfbf5;
+    border: 3px solid #c3d8f2;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #e4dfd3;
+    height: 19px;
+    margin-top: 3px;
+}
+
+    .listaIdeias .itemEspaco p {
+        font: 10px Arial;
+        float: left;
+        padding-top: 3px;
+        text-align: center;
+        width: 37px;
+    }
+
+    .listaIdeias .itemEspaco .porcentagem {
+        height: 19px;
+        margin-left: 37px;
+    }
+
+    .listaIdeias .itemEspaco span {
+        background: url('../Content/images/backgrounds/patternPorcentagem.png') repeat-x;
+        display: block;
+        height: 19px;
+    }
+/* Modal idealizar */
+.modal {
+    overflow: hidden;
+    position: relative;
+}
+
+    .modal .logo, #boxEdicaoInfos .logo {
+        float: right;
+        text-align: right;
+        width: 196px;
+    }
+
+        .modal .logo a, #boxEdicaoInfos .logo a {
+            border: 1px solid #cecece;
+            display: block;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+            .modal .logo a img, #boxEdicaoInfos .logo a img {
+                display: block;
+                height: 188px;
+                width: 194px;
+            }
+
+            .modal .logo a span, #boxEdicaoInfos .logo a span {
+                background: rgba(0,0,0,0.5);
+                color: #fff;
+                bottom: 0;
+                display: block;
+                line-height: 12px;
+                padding: 8px 10px;
+                position: absolute;
+                width: 174px;
+                cursor: pointer;
+            }
+
+    .modal span.info, .modal p.info, #boxEdicaoInfos span.info {
+        display: block;
+        font: 10px Arial;
+        margin: 0 5px 20px;
+        text-align: right;
+    }
+
+    .modal p.info {
+        bottom: 10px;
+        left: 0;
+        margin: 0;
+        position: absolute;
+        text-align: left;
+    }
+
+    .modal input[type="text"], .modal textarea {
+        width: 440px;
+    }
+
+    .modal input[type="file"], #boxEdicaoInfos input[type="file"] {
+        display: none;
+    }
+
+    .modal textarea {
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .modal .ctnIdealizar {
+        margin-right: 210px;
+    }
+/* Manager */
+.detalheIdeia {
+    background: url("../Content/images/backgrounds/patternLista.gif");
+    border-top: 2px solid #e6e6e6;
+    border-bottom: 2px solid #e6e6e6;
+    overflow: hidden;
+    padding: 18px 15px 10px 20px;
+    height: 169px;
+    top: -14px;
+    position: relative;
+}
+
+    .detalheIdeia .espacoFoto {
+        float: left;
+        position: relative;
+        width: 160px;
+    }
+
+    .detalheIdeia img.imgIdeia {
+        border: 3px solid #e6e6e6;
+        display: block;
+        height: 149px;
+        width: 153px;
+    }
+
+    .detalheIdeia img.andamento {
+        bottom: -15px;
+        left: -15px;
+        position: absolute;
+        z-index: 2;
+    }
+
+    .detalheIdeia .ctnIdeia {
+        margin-left: 180px;
+        min-height: 160px;
+        position: relative;
+    }
+
+        .detalheIdeia .ctnIdeia .info {
+            margin-bottom: 10px;
+            font-style: italic;
+            font-size: 11px;
+            margin-top: -5px;
+        }
+
+        .detalheIdeia .ctnIdeia .acoes {
+            margin-top: -10px;
+            position: absolute;
+            right: 0;
+            bottom: -10px;
+            max-width: 465px;
+        }
+
+    .detalheIdeia h2.titulo {
+        margin-bottom: 3px;
+    }
+
+    .detalheIdeia p.descricao {
+        margin-bottom: 10px;
+        word-wrap: break-word;
+    }
+
+.acoes {
+    text-align: right;
+}
+
+    .acoes a.btPadrao {
+        height: 20px;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 16px;
+        padding: 6px 15px 0;
+    }
+
+        .acoes a.btPadrao.btAcao {
+            background-color: #f7f9fb;
+            border-color: #d5d5d5;
+            box-shadow: 0 8px 0 -5px #f9fbfc inset;
+            color: #798ab3;
+        }
+
+    .acoes a.btAuxiliar {
+        left: 0;
+        bottom: 0;
+        position: absolute;
+    }
+
+    .acoes a.btPadrao.btAcao.desabilitado {
+        background-color: #edf4f9;
+        color: #bfcadd;
+        cursor: default;
+    }
+/* Box de edição de informações */
+#boxEdicaoInfos, #boxVagas {
+    border-bottom: 2px solid #e6e6e6;
+    margin: 0 0 8px 0;
+    overflow: hidden;
+    padding: 0 18px 15px 20px;
+}
+
+    #boxEdicaoInfos .formEdicao {
+        float: left;
+        width: 435px;
+    }
+
+        #boxEdicaoInfos .formEdicao span.info {
+            margin-top: -15px;
+        }
+
+        #boxEdicaoInfos .formEdicao input, #boxEdicaoInfos .formEdicao textarea {
+            width: 405px;
+        }
+
+        #boxEdicaoInfos .formEdicao textarea {
+            height: 50px;
+        }
+
+    #boxEdicaoInfos .logo {
+        float: none;
+        margin-left: 445px;
+    }
+
+        #boxEdicaoInfos .logo input {
+            margin-top: 15px;
+        }
+
+    #boxEdicaoInfos .formEdicao .dataInicio {
+        float: left;
+        width: 145px;
+    }
+
+        #boxEdicaoInfos .formEdicao .dataInicio input {
+            width: 120px;
+        }
+
+.formEdicao .status {
+    margin-left: 175px;
+}
+
+.formEdicao select {
+    width: 140px;
+}
+/* Box de vagas */
+#boxVagas {
+    border: 0 none;
+    padding: 0 0 15px;
+}
+
+    #boxVagas ul {
+        overflow: hidden;
+    }
+
+    #boxVagas p.legenda {
+        font-weight: bold;
+        font-size: 14px;
+        font-style: italic;
+    }
+
+div p.msg {
+    font-weight: bold;
+    margin: 40px 0;
+    text-align: center;
+}
+
+    div p.msg span {
+        background: url('../Content/images/icones/icoAlerta.png') no-repeat center left;
+        display: inline-block;
+        padding: 2px 0 2px 25px;
+    }
+
+.abrirVaga {
+    margin-bottom: 15px;
+}
+
+.ctnVagas {
+    background-color: #fff;
+    font: bold 18px Arial;
+    padding: 0 8px;
+}
+
+    .ctnVagas div.ajuda {
+        padding-bottom: 5px;
+    }
+
+    .ctnVagas select {
+        margin: 0 0 0 5px;
+        width: 200px;
+    }
+
+    .ctnVagas input[type="text"] {
+        margin: 0;
+        width: 210px;
+    }
+/* Fim manager */
+/* Perfil */
+.breadCrumb {
+    font: bold 18px Arial;
+    margin-bottom: 15px;
+}
+
+    .breadCrumb span.pgAtual {
+        font-size: 14px;
+    }
+
+    .breadCrumb span.separador {
+        display: inline-block;
+        margin: 0 5px;
+        vertical-align: middle;
+    }
+
+.detalhesPerfil {
+    background: url('../Content/images/backgrounds/patternLista.gif');
+    border-top: 2px solid #e6e6e6;
+    border-bottom: 2px solid #e6e6e6;
+    margin: -14px 0 20px 0;
+    overflow: hidden;
+    padding: 18px 20px 10px;
+}
+
+    .detalhesPerfil .espacoFoto {
+        background-color: #fff;
+        border: 2px solid #e6e6e6;
+        float: left;
+        margin: 0;
+        padding: 2px;
+        width: 147px;
+    }
+
+        .detalhesPerfil .espacoFoto img {
+            display: block;
+            height: 147px;
+            width: 147px;
+        }
+
+    .detalhesPerfil > div {
+        margin-left: 179px;
+        padding-top: 20px;
+    }
+
+    .detalhesPerfil p {
+        margin-bottom: 15px;
+    }
+
+        .detalhesPerfil p strong {
+            display: block;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+    .detalhesPerfil h2 {
+        font: bold 18px Arial;
+    }
+
+    .detalhesPerfil > div p a {
+        color: #707070;
+    }
+
+    .detalhesPerfil .acoes {
+        margin-top: 25px;
+    }
+
+.listaInscricoes {
+    max-height: 292px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+    .listaInscricoes .acoes {
+        top: 55px;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+    }
+
+.boxUsuarios, #boxVagas, #boxEnvolvidos {
+    margin-right: 12px;
+    margin-left: 5px;
+}
+
+#boxIdeias, #boxVagas, #boxEnvolvidos {
+    position: absolute;
+    bottom: 25px;
+    top: 270px;
+    right: 10px;
+    left: 0px;
+    padding-right: 10px;
+    margin-right: 0;
+}
+
+#boxComentarios {
+    position: absolute;
+    bottom: 25px;
+    top: 256px;
+    right: 0;
+    left: 0;
+}
+
+.boxUsuarios ul, #boxVagas, #boxIdeias, #boxEnvolvidos {
+    overflow-y: auto;
+}
+
+
+    .boxUsuarios li, #boxVagas li, #boxEnvolvidos li {
+        background: url("../Content/images/backgrounds/patternLista.gif");
+        border: 2px solid #e6e6e6;
+        float: left;
+        margin: 0 0 15px 10px;
+        overflow: hidden;
+        padding: 13px 12px;
+        width: 281px;
+    }
+
+.boxUsuarios.listaInscricoes li {
+    height: 108px;
+    background: none #fff;
+}
+
+.boxUsuarios li img, #boxVagas li img, #boxEnvolvidos li img {
+    background-color: #FFF;
+    border: 3px solid #e6e6e6;
+    float: left;
+    height: 103px;
+    width: 106px;
+}
+
+.boxUsuarios li > div, #boxVagas li > div, #boxEnvolvidos li > div {
+    margin-left: 122px;
+    position: relative;
+}
+
+    #boxVagas li > div.quadroVagaAberta {
+        margin-left: 0px;
+    }
+
+.boxUsuarios li h3, #boxVagas li h3, #boxEnvolvidos li h3 {
+    font: bold 14px Arial;
+    margin: 2px 0 8px;
+}
+
+    .boxUsuarios li h3 a, #boxVagas li h3 a, #boxEnvolvidos li h3 a {
+        color: #707070;
+    }
+
+.boxUsuarios li p {
+    font: italic bold 12px Arial;
+}
+
+.boxUsuarios li span, #boxVagas li span, #boxEnvolvidos li span {
+    display: block;
+}
+/* Fim perfil */
+
+/* Comentários */
+
+#edicaoComentario {
+    background-color: #f9f9f9;
+    border-bottom: solid 1px #ededed;
+    padding: 10px 15px 5px 10px;
+}
+
+#btComentar {
+    float: right;
+    position: relative;
+    top: 28px;
+}
+
+#boxComentarios textarea {
+    width: 545px;
+    height: 40px;
+    max-width: 545px;
+    max-height: 40px;
+    margin-bottom: 0;
+}
+
+#listaComentarios {
+    position: absolute;
+    bottom: 5px;
+    top: 80px;
+    right: 10px;
+    left: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 40px;
+}
+
+    #listaComentarios li {
+        width: 100%;
+        border-bottom: solid 1px #e6e6e6;
+        margin: 0 20px 10px;
+        padding: 10px 0 0;
+        min-height:60px;
+    }
+
+    #listaComentarios li.verMais {
+        border: none;
+    }
+
+    #listaComentarios li a.removerComentario {
+        float: right;
+        font-weight: bold;
+    }
+
+    #listaComentarios li div.fotoUsuario {
+        float: left;
+        height: 45px;
+        margin: 0 10px 0 0;   
+    }
+
+    #listaComentarios li img {
+        width: 39px;
+        height: 39px;
+        border: solid 1px #e4dfd3;
+    }
+
+    #listaComentarios li .usuario {
+        color: #4fa9ee;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    #listaComentarios li p {
+        margin-left: 50px;
+        min-height: 30px;
+    }
+
+    #listaComentarios li div.data {
+        position: relative;
+        text-align: center;
+        bottom: -9px;
+        font-size: 11px;
+        color: #bbb;
+    }
+
+    #listaComentarios li div.data span {
+        background-color: #fff;
+        padding: 0 5px 0;
+        display: inline-block;
+    }
+
+/* Fim Comentários*/
+
+/*Utilitários*/
+div.ajuda {
+    font-size: 11px;
+    width: 365px;
+    margin-left: 5px;
+    color: #888;
+    font-weight: normal;
+}
+/*Utilitários*/
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+    border-radius: 10px;
+    background: #ddd;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #888;
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);*/
+}

@@ -1,0 +1,42 @@
+﻿@using EdeaDay.GestaoDeIdeias.Model.Utils
+@using EdeaDay.GestaoDeIdeias.Site.Helpers
+@{ Layout = null;}
+@model EdeaDay.GestaoDeIdeias.Site.ViewModel.IdeiaViewModel
+<ul class="listaIdeias">
+    @foreach (var ideia in Model.Ideias)
+    {
+        <li>
+            <div class="verMaisInfos">
+                <div class="espacoFoto">
+                    <a href="@Url.Action("Details", "Ideia", new { id = ideia.IdeiaID })">
+                        <img src="@Url.ObterUrlLogoIdeia(ideia)" alt="@ideia.Titulo" title="@ideia.Titulo" />
+                    </a>
+                </div>
+            </div>
+            <div class="infosIniciais">
+                <a href="@Url.Action("Details", "Ideia", new { id = ideia.IdeiaID })">
+                    <h2 class="titulo">@ideia.Titulo</h2>
+                </a>
+                <h3>Descrição:</h3>
+                <p class="descricao">
+                    @ideia.Descricao
+                </p>
+                @if (ideia.UserIsIdealizador(Model.UsuarioAtual))
+                {
+                    <a href="@Url.Action("Manager", "Ideia", new { id = ideia.IdeiaID })" title="manager" class="btPadrao btVerde">manager</a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Details", "Ideia", new { id = ideia.IdeiaID })" title="informações" class="btPadrao btVerde">informações</a>
+                }
+                <section class="andamento">
+                    <div>
+                        <img src="@Url.ObterUrlMedalhaIdeia(ideia)" alt="@ideia.Status.GetDescription()" title="@ideia.Status.GetDescription()" />
+                        <h3>@ideia.Status.GetDescription()</h3>
+                        <span>@(ideia.Vagas.Any() ? ideia.Vagas.Count.ToString() : "Sem") @(ideia.Vagas.Count == 1 ? "vaga" : "vagas")</span>
+                    </div>
+                </section>
+            </div>
+        </li>
+    }
+</ul>

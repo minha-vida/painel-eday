@@ -1,0 +1,18 @@
+﻿@using EdeaDay.GestaoDeIdeias.Site.Helpers
+@model EdeaDay.GestaoDeIdeias.Model.Ideia
+<div id="controlarVagas">
+    <div class="abrirVaga">
+        <div>
+            @using (Ajax.BeginForm("Add", "Vaga", new AjaxOptions { UpdateTargetId = "controlarVagas", OnBegin = "LockScreen", OnComplete = "UnlockScreen();InicializarModalDeInscricoes();" }))
+            { 
+                <div class="ctnVagas">
+                    <div class="ajuda">Para abrir uma nova vaga, selecione um cargo e clique em "abrir vaga"</div>
+                    @Html.RenderSelectListForCargo(Model)
+                    @Html.HiddenFor(model => model.IdeiaID)
+                    <input type="submit" value="Abrir vaga" class="btPadrao btVerde btMenor" />
+                </div>
+            }
+        </div>
+    </div>
+    @Html.Partial("_BoxVagas", Model)
+</div>
