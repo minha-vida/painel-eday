@@ -6,7 +6,7 @@ Software livre com o objetivo de organizar e divulgar projetos e idéias de mane
 ##Considerações:
 Este software foi criado com o intuito de ajudar o pessoal do [Minha Vida](http://www.minhavida.com.br) a organizar suas ideias e criar times que fizessem a inovação acontecer!
 
-O projeto é um pouco antigo e o código não é o último estado da arte. Ele foi desenvolvido por mim em parceria com o [Vinicius Cavalcante](https://github.com/vinicaval), [Caroline Ichiyama](https://github.com/carol91) e [Marcelo Sabino](https://github.com/msabino). O design foi todo ideia do Caio Machado. Criamos o painel quando ainda éramos novatos em ASP.NET MVC como um jeito de aprendermos e contribuirmos para a inovação do grupo como um todo. :)
+O projeto é um pouco antigo e o código não é o último estado da arte. Ele foi desenvolvido pelo [Wilson Tayar](https://github.com/wilsontayar), [Vinicius Cavalcante](https://github.com/vinicaval), [Caroline Ichiyama](https://github.com/carol91) e [Marcelo Sabino](https://github.com/msabino). O design foi todo ideia do Caio Machado. Criamos o painel quando ainda éramos novatos em ASP.NET MVC como um jeito de aprendermos e contribuirmos para a inovação do grupo como um todo. :)
 
 Qualquer tipo de modificação realizada no software deve ser aberta para todos, já que estamos sob a licença do GPL v2.
 
